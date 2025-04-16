@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NAVER 로그인</title>
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <header class="header" role="banner">
+      <a href="https://www.naver.com" class="logo" id="log.naver">
+        <h1 class="blind">NAVER</h1>
+      </a>
+    </header>
+
+    <!-- 메인 -->
+    <main id="container" class="container">
+      <section class="content">
+        <form class="login_form">
+          <!-- 아이디 입력 -->
+          <div class="input_wrap" id="id_wrap">
+            <label class="input_label" for="id_input"
+              >아이디 또는 전화번호</label
+            >
+            <input
+              type="text"
+              id="id_input"
+              name="id"
+              class="login_input"
+              maxlength="41"
+              required
+            />
+            <button
+              type="button"
+              class="btn_clear"
+              id="id_clear"
+              style="display: none"
+            >
+              ✕
+            </button>
+          </div>
+
+          <!-- 비밀번호 입력 -->
+          <div class="input_wrap" id="pw_wrap">
+            <label class="input_label" for="pw_input">비밀번호</label>
+            <input
+              type="password"
+              id="pw_input"
+              name="pw"
+              class="login_input"
+              maxlength="16"
+              required
+            />
+            <button
+              type="button"
+              class="btn_toggle_pw"
+              id="pw_toggle"
+              style="display: none"
+            >
+              👁️
+            </button>
+            <button
+              type="button"
+              class="btn_clear"
+              id="pw_clear"
+              style="display: none"
+            >
+              ✕
+            </button>
+          </div>
+
+          <!-- 로그인 상태 유지 및 보안 버튼 -->
+          <div class="btn_group">
+            <button type="submit" class="btn_login_state">
+              로그인 상태 유지
+            </button>
+            <button type="submit" class="btn_ip_security">IP 보안</button>
+          </div>
+
+          <!-- 로그인 버튼 -->
+          <button type="submit" class="btn_login">로그인</button>
+        </form>
+
+        <!-- 로그인 박스 아래 네비게이션바 -->
+        <nav>
+          <ul class="find_wrap" id="find_wrap">
+            <li>
+              <a target="_blank" href="" id="idinquiry" class="find_text"
+                >비밀번호 찾기</a
+              >
+            </li>
+            <li>
+              <a target="_blank" href="" id="pwinquiry" class="find_text"
+                >아이디 찾기</a
+              >
+            </li>
+            <li>
+              <a target="_blank" href="" id="join" class="find_text"
+                >회원가입</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- 광고 배너 -->
+        <aside id="gladbanner" class="banner_wrap">&nbsp;</aside>
+      </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+      <nav>
+        <ul class="footer_link" id="footer_link">
+          <li>
+            <a
+              target="_blank"
+              href="http://www.naver.com/rules/service.html"
+              class="footer_item"
+              id="fot.agreement"
+              ><span class="text">이용약관</span></a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="http://www.naver.com/rules/privacy.html"
+              class="footer_item"
+              id="fot.privacy"
+              ><span class="text"><strong>개인정보처리방침</strong></span></a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="http://www.naver.com/rules/disclaimer.html"
+              class="footer_item"
+              id="fot.disclaimer"
+              ><span class="text">책임의 한계와 법적고지</span></a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://help.naver.com/alias/membership/p.membership/main.naver"
+              class="footer_item"
+              id="fot.help"
+              ><span class="text">회원정보 고객센터</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="footer_copy">
+        <a id="fot.naver" target="_blank" href="https://www.navercorp.com">
+          <span class="footer_logo"><span class="blind">네이버</span></span>
+        </a>
+        <span class="text">Copyright</span>
+        <span class="corp">© NAVER Corp.</span>
+        <span class="text">All Rights Reserved.</span>
+      </div>
+    </footer>
+  </body>
+</html>
