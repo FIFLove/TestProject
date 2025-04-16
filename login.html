@@ -4,14 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NAVER 로그인</title>
+    <link rel="stylesheet" type="text/css" href="login.css" />
   </head>
   <body>
     <!-- 헤더 -->
-    <header class="header" role="banner">
-      <a href="https://www.naver.com" class="logo" id="log.naver">
-        <h1 class="blind">NAVER</h1>
-      </a>
-    </header>
+    <div class="wrap">
+      <header class="header" role="banner">
+        <div class="header_inner">
+          <a href="https://www.naver.com" class="logo" id="log.naver">
+            NAVER
+          </a>
+        </div>
+      </header>
+    </div>
 
     <!-- 메인 -->
     <main id="container" class="container">
@@ -89,11 +94,14 @@
                 >비밀번호 찾기</a
               >
             </li>
+            <!-- | 구분선넣기 -->
+            <li class="separator"></li>
             <li>
               <a target="_blank" href="" id="pwinquiry" class="find_text"
                 >아이디 찾기</a
               >
             </li>
+            <li class="separator"></li>
             <li>
               <a target="_blank" href="" id="join" class="find_text"
                 >회원가입</a
@@ -103,7 +111,10 @@
         </nav>
 
         <!-- 광고 배너 -->
-        <aside id="gladbanner" class="banner_wrap">&nbsp;</aside>
+        <aside id="gladbanner" class="banner_wrap">
+          &nbsp;
+          <img src="./img/test2.png" alt="광고 배너" />
+        </aside>
       </section>
     </main>
 
@@ -117,41 +128,44 @@
               href="http://www.naver.com/rules/service.html"
               class="footer_item"
               id="fot.agreement"
-              ><span class="text">이용약관</span></a
+              >이용약관</a
             >
           </li>
+          <li class="separator_foot"></li>
           <li>
             <a
               target="_blank"
               href="http://www.naver.com/rules/privacy.html"
               class="footer_item"
               id="fot.privacy"
-              ><span class="text"><strong>개인정보처리방침</strong></span></a
+              ><strong>개인정보처리방침</strong></a
             >
           </li>
+          <li class="separator_foot"></li>
           <li>
             <a
               target="_blank"
               href="http://www.naver.com/rules/disclaimer.html"
               class="footer_item"
               id="fot.disclaimer"
-              ><span class="text">책임의 한계와 법적고지</span></a
+              >책임의 한계와 법적고지</a
             >
           </li>
+          <li class="separator_foot"></li>
           <li>
             <a
               target="_blank"
               href="https://help.naver.com/alias/membership/p.membership/main.naver"
               class="footer_item"
               id="fot.help"
-              ><span class="text">회원정보 고객센터</span></a
+              >회원정보 고객센터</a
             >
           </li>
         </ul>
       </nav>
-      <div class="footer_copy">
-        <a id="fot.naver" target="_blank" href="https://www.navercorp.com">
-          <span class="footer_logo"><span class="blind">네이버</span></span>
+      <div class="footer_inner">
+        <a href="https://www.naver.com" class="logo" id="footer.logo">
+          NAVER
         </a>
         <span class="text">Copyright</span>
         <span class="corp">© NAVER Corp.</span>
