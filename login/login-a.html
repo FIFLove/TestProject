@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NAVER 로그인</title>
+    <link rel="stylesheet" href="login.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // id x 버튼 활성화, 비활성화
+            $('#id_input').on('input', function () {
+                if ($(this).val().length > 0) {
+                    console.log('llll');
+                    $('#id_clear').css('display', 'block');
+                } else {
+                    $('#id_clear').css('display', 'none');
+                }
+            });
+            // id x 버튼 클릭시, input clear
+            $('#id_clear').on('click', function () {
+                $('#id_input').val('').focus();
+                $(this).css('display', 'none');
+            });
+
+            // pw x 버튼 활성화, 비활성화
+            $('#pw_input').on('input', function () {
+                if ($(this).val().length > 0) {
+                    $('#pw_clear').css('display', 'block');
+                    $('#pw_toggle').css('display', 'block');
+                } else {
+                    $('#pw_clear').css('display', 'none');
+                    $('#pw_toggle').css('display', 'none');
+                }
+            });
+            // pw x 버튼 클릭시, input clear
+            $('#pw_clear').on('click', function () {
+                $('#pw_input').val('').focus();
+                $(this).css('display', 'none');
+                $('#pw_toggle').css('display', 'none');
+            });
+            // pw_toggle 버튼 클릭시, attr type 변경
+            $('#pw_toggle').on('click', function() {
+                const pwInput = $('#pw_input');
+                const currentType = pwInput.attr('type');
+
+                if (currentType === 'password') {
+                    pwInput.attr('type', 'text');
+                    $(this).text('👁️'); // 눈 감은 아이콘 등으로 바꿀 수도 있어요
+                } else {
+                    pwInput.attr('type', 'password');
+                    $(this).text('🙈');
+                }
+            });
+
+            $('#id_input, #pw_input').on('input', function () {
+                const idVal = $('#id_input').val();
+                const pwVal = $('#pw_input').val();
+
+                if (idVal.length > 0 && pwVal.length > 0) {
+                    $('.btn_login').css({
+                        'background-color': '#4CAF50',
+                        'border': '1px solid #4CAF50',
+                        'color': '#fff'
+                    });
+                } else {
+                    $('.btn_login').css({
+                        'background-color': '#ccc',
+                        'border': '1px solid #ccc',
+                        'color': '#888'
+                    });
+                }
+            });
+
+            $('.btn_login').on('click', function () {
+                const idVal = $('#id_input').val();
+                const pwVal = $('#pw_input').val();
+
+                if(idVal.length == 0) {
+                    $("#id_empty").css('display', 'block');
+                    $("#pw_empty").css('display', 'none');
+                } else if(pwVal.length == 0) {
+                    $("#id_empty").css('display', 'none');
+                    $("#pw_empty").css('display', 'block');
+                } else {
+                    $("#id_empty").css('display', 'none');
+                    $("#pw_empty").css('display', 'none');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<!-- 헤더 -->
+<header class="header" role="banner">
+    <a href="https://www.naver.com" class="logo" id="log.naver">
+        <h1 class="blind">NAVER</h1>
+    </a>
+</header>
+
+<!-- 메인 -->
+<main id="container" class="container">
+    <section class="content">
+        <form class="login_form">
+            <!-- 아이디 입력 -->
+            <div class="input_wrap" id="id_wrap">
+                <input
+                        type="text"
+                        id="id_input"
+                        name="id"
+                        class="login_input"
+                        maxlength="41"
+                        placeholder=""
+                        required
+                />
+                <button
+                        type="button"
+                        class="btn_clear"
+                        id="id_clear"
+                        style="display: none"
+                >
+                    ✕
+                </button>
+                <label class="input_label" for="id_input">아이디 또는 전화번호</label>
+            </div>
+
+            <!-- 비밀번호 입력 -->
+            <div class="input_wrap" id="pw_wrap">
+                <input
+                        type="password"
+                        id="pw_input"
+                        name="pw"
+                        class="login_input"
+                        maxlength="16"
+                        placeholder=""
+                        required
+                />
+                <button
+                        type="button"
+                        class="btn_toggle_pw"
+                        id="pw_toggle"
+                        style="display: none"
+                >
+                    🙈
+                </button>
+                <button
+                        type="button"
+                        class="btn_clear"
+                        id="pw_clear"
+                        style="display: none"
+                >
+                    ✕
+                </button>
+                <label class="input_label" for="pw_input">비밀번호</label>
+            </div>
+
+            <!-- 로그인 상태 유지 및 보안 버튼 -->
+            <div class="btn_group">
+                <div class="keep_check">
+                    <input type="checkbox" id="keep" name="nvlong" class="input_keep" value="off">
+                    <label for="keep" class="keep_text">로그인 상태 유지</label>
+                </div>
+            </div>
+
+            <div>
+                <div id="id_empty" style="display:none;color: red;"><b>아이디 또는 전화번호</b>를 입력해 주세요.</div>
+                <div id="pw_empty" style="display:none;color: red;"><b>비밀번호</b>를 입력해 주세요.</div>
+            </div>
+
+            <!-- 로그인 버튼 -->
+            <button type="submit" class="btn_login">로그인</button>
+        </form>
+
+        <!-- 로그인 박스 아래 네비게이션바 -->
+        <nav>
+            <ul class="find_wrap" id="find_wrap">
+                <li>
+                    <a target="_blank" href="" id="idinquiry" class="find_text"
+                    >비밀번호 찾기</a
+                    >
+                </li>
+                <li>
+                    <a target="_blank" href="" id="pwinquiry" class="find_text"
+                    >아이디 찾기</a
+                    >
+                </li>
+                <li>
+                    <a target="_blank" href="" id="join" class="find_text"
+                    >회원가입</a
+                    >
+                </li>
+            </ul>
+        </nav>
+
+        <!-- 광고 배너 -->
+        <aside id="gladbanner" class="banner_wrap">&nbsp;</aside>
+    </section>
+</main>
+
+<!-- 푸터 -->
+<footer class="footer">
+    <nav>
+        <ul class="footer_link" id="footer_link">
+            <li>
+                <a
+                        target="_blank"
+                        href="http://www.naver.com/rules/service.html"
+                        class="footer_item"
+                        id="fot.agreement"
+                ><span class="text">이용약관</span></a
+                >
+            </li>
+            <li>
+                <a
+                        target="_blank"
+                        href="http://www.naver.com/rules/privacy.html"
+                        class="footer_item"
+                        id="fot.privacy"
+                ><span class="text"><strong>개인정보처리방침</strong></span></a
+                >
+            </li>
+            <li>
+                <a
+                        target="_blank"
+                        href="http://www.naver.com/rules/disclaimer.html"
+                        class="footer_item"
+                        id="fot.disclaimer"
+                ><span class="text">책임의 한계와 법적고지</span></a
+                >
+            </li>
+            <li>
+                <a
+                        target="_blank"
+                        href="https://help.naver.com/alias/membership/p.membership/main.naver"
+                        class="footer_item"
+                        id="fot.help"
+                ><span class="text">회원정보 고객센터</span></a
+                >
+            </li>
+        </ul>
+    </nav>
+    <div class="footer_copy">
+        <a id="fot.naver" target="_blank" href="https://www.navercorp.com">
+            <span class="footer_logo"><span class="blind">네이버</span></span>
+        </a>
+        <span class="text">Copyright</span>
+        <span class="corp">© NAVER Corp.</span>
+        <span class="text">All Rights Reserved.</span>
+    </div>
+</footer>
+</body>
+</html>
