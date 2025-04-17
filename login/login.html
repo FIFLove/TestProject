@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NAVER 로그인</title>
-    <link rel="stylesheet" type="text/css" href="login.css" />
+    <link rel="stylesheet" href="login.css" />
   </head>
   <body>
     <!-- 헤더 -->
@@ -24,15 +24,13 @@
         <form class="login_form">
           <!-- 아이디 입력 -->
           <div class="input_wrap" id="id_wrap">
-            <label class="input_label" for="id_input"
-              >아이디 또는 전화번호</label
-            >
             <input
               type="text"
               id="id_input"
               name="id"
               class="login_input"
               maxlength="41"
+              placeholder=""
               required
             />
             <button
@@ -43,17 +41,18 @@
             >
               ✕
             </button>
+            <label class="input_label" for="id_input">아이디 또는 전화번호</label>
           </div>
 
           <!-- 비밀번호 입력 -->
           <div class="input_wrap" id="pw_wrap">
-            <label class="input_label" for="pw_input">비밀번호</label>
             <input
               type="password"
               id="pw_input"
               name="pw"
               class="login_input"
               maxlength="16"
+              placeholder=""
               required
             />
             <button
@@ -72,14 +71,19 @@
             >
               ✕
             </button>
+            <label class="input_label" for="pw_input">비밀번호</label>
           </div>
 
           <!-- 로그인 상태 유지 및 보안 버튼 -->
           <div class="btn_group">
-            <button type="submit" class="btn_login_state">
-              로그인 상태 유지
-            </button>
-            <button type="submit" class="btn_ip_security">IP 보안</button>
+<!--            <button type="submit" class="btn_login_state">-->
+<!--              로그인 상태 유지-->
+<!--            </button>-->
+
+            <div class="keep_check">
+              <input type="checkbox" id="keep" name="nvlong" class="input_keep" value="off">
+              <label for="keep" class="keep_text">로그인 상태 유지</label>
+            </div>
           </div>
 
           <!-- 로그인 버튼 -->
