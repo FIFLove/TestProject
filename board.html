@@ -42,57 +42,104 @@
                 </span>
 
                 <div class="sortArea">
-                    <!-- 2. 공지 숨기기 -->
+                    <!-- 공지 숨기기 -->
                     <label><input type="checkbox"> 공지 숨기기 </label>
 
-                    <!-- 3. 보는 방식 버튼 3개 -->
+                    <!-- 보는 방식 버튼 3개 -->
                     <img src="img_board/sortBtn.png">
 
-                    <!-- 4. 게시글 개수 버튼 리스트 (5/10/15) -->
+                    <!-- 게시글 개수 버튼 리스트 (5/10/15) -->
                     <select name="area">
-                        <option value="seoul"> 5개씩 </option>
-                        <option value="gyeonggi"> 10개씩 </option>
-                        <option value="jeolla"> 15개씩 </option>
-                        <option value="gyeongsang"> 20개씩 </option>
-                      </select>
+                        <option value="five"> 5개씩 </option>
+                        <option value="ten"> 10개씩 </option>
+                        <option value="fifteen"> 15개씩 </option>
+                        <option value="twenty"> 20개씩 </option>
+                    </select>
                 </div>
 
             </div>
 
-        
+
 
             <!-- 게시판 글 목록 -->
             <div class="board">
+                <!-- 게시글 테이블 -->
+                <table class="boardTable">
+                    <thead>
+                        <tr>
+                            <th class="boardCategory"></th>
+                            <th class="boardTitle">제목</th>
+                            <th class="boardWriter">작성자</th>
+                            <th class="boardDate">작성일</th>
+                            <th class="boardCount">조회수</th>
+                        </tr>
+                    </thead>
+                    <!-- 게시글(더미 데이터)-->
+                    <tbody>
+                        <!-- 공지글 -->
+                        <tr class="notice">
+                            <td class="boardCategory">공지</td>
+                            <td class="boardTitle">공지제목</td>
+                            <td class="boardWriter">작성자</td>
+                            <td class="boardDate">2025.04.16</td>
+                            <td class="boardCount">12</td>
+                        </tr>
+                        <tr>
+                            <td class="boardCategory">카테고리1</td>
+                            <td class="boardTitle">제목1</td>
+                            <td class="boardWriter">작성자1</td>
+                            <td class="boardDate">2025.04.16</td>
+                            <td class="boardCount">1</td>
+                        </tr>
 
-                <!-- 
-                    TODO.
-                    ※ 페이지유형 | 제목 | 작성자 | 작성일 | 조회수 | 좋아요
-                    1. 공지글목록 (5개)
-                    2. 일반글목록 (보는 방식 버튼에 따라 다르게 보여줌)
-                    3. 글쓰기버튼
-                    -->
+                        <tr>
+                            <td class="boardCategory">카테고리2</td>
+                            <td class="boardTitle">제목2</td>
+                            <td class="boardWriter">작성자2</td>
+                            <td class="boardDate">2025.04.16</td>
+                            <td class="boardCount">2</td>
+                        </tr>
 
-                    <table class="boardTable">
-                        <thead>
-                            <tr>
-                                <th>제목</th>
-                                <th>작성자</th>
-                                <th>작성일</th>
-                                <th>조회수</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- 공지글 -->
-                            <tr class="notice">
-                    </table>
+                        <tr>
+                            <td class="boardCategory">카테고리3</td>
+                            <td class="boardTitle">제목3</td>
+                            <td class="boardWriter">작성자3</td>
+                            <td class="boardDate">2025.04.16</td>
+                            <td class="boardCount">3</td>
+                        </tr>
+
+                        <tr>
+                            <td class="boardCategory">카테고리4</td>
+                            <td class="boardTitle">제목4</td>
+                            <td class="boardWriter">작성자4</td>
+                            <td class="boardDate">2025.04.16</td>
+                            <td class="boardCount">4</td>
+                        </tr>
+
+                    </tbody>
+
+
+                </table>
             </div>
+
+            <!-- 글쓰기버튼 -->
+             <img src="img_board/write_btn.jpeg" class="writeBtn">
 
             <!--페이지 번호들 -->
             <div class="page">
-                <!-- 
-                    TODO.
-                    1. 페이지 번호
-                    -->
+                <span class="pageNum">1</span>
+                <span class="pageNum">2</span>
+                <span class="pageNum">3</span>
+                <span class="pageNum">4</span>
+                <span class="pageNum">5</span>
+                <span class="pageNum">6</span>
+                <span class="pageNum">7</span>
+                <span class="pageNum">8</span>
+                <span class="pageNum">9</span>
+                <span class="pageNum">10</span>
+
+                <!-- 다음페이지 버튼 -->
+                <button> > </button> 
             </div>
 
             <!-- 글목록 검색 -->

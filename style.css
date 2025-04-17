@@ -49,6 +49,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding-right: 2%;
+    border-bottom: 1px solid #000;
 }
 
 .sortArea {
@@ -62,4 +63,47 @@ footer {
     border-collapse: collapse;
     margin-top: 20px;
     border: 1px solid #000;
+    text-align: center;
+}
+
+thead .boardTitle {
+    width: 60%;
+    text-align: center;
+}
+
+tbody .boardTitle {
+    width: 60%;
+    text-align: left;
+    padding-left:10px;
+}
+
+.boardCategory, .boardWriter, .boardDate, .boardCount {
+    width: 10%;
+}
+
+.notice {
+    color: red;
+    font-weight: bold;
+}
+
+.writeBtn {
+    width: 100px;
+    height: 45px;
+    display: flex;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 20%;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pageNum{
+    margin: 0 5px;
+    cursor: pointer;
 }
