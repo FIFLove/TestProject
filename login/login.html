@@ -7,84 +7,84 @@
     <link rel="stylesheet" href="login.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-      $(document).ready(function() {
+      $(document).ready(function () {
         // id x 버튼 활성화, 비활성화
-        $('#id_input').on('input', function () {
+        $("#id_input").on("input", function () {
           if ($(this).val().length > 0) {
-            console.log('llll');
-            $('#id_clear').css('display', 'block');
+            console.log("llll");
+            $("#id_clear").css("display", "block");
           } else {
-            $('#id_clear').css('display', 'none');
+            $("#id_clear").css("display", "none");
           }
         });
         // id x 버튼 클릭시, input clear
-        $('#id_clear').on('click', function () {
-          $('#id_input').val('').focus();
-          $(this).css('display', 'none');
+        $("#id_clear").on("click", function () {
+          $("#id_input").val("").focus();
+          $(this).css("display", "none");
         });
 
         // pw x 버튼 활성화, 비활성화
-        $('#pw_input').on('input', function () {
+        $("#pw_input").on("input", function () {
           if ($(this).val().length > 0) {
-            $('#pw_clear').css('display', 'block');
-            $('#pw_toggle').css('display', 'block');
+            $("#pw_clear").css("display", "block");
+            $("#pw_toggle").css("display", "block");
           } else {
-            $('#pw_clear').css('display', 'none');
-            $('#pw_toggle').css('display', 'none');
+            $("#pw_clear").css("display", "none");
+            $("#pw_toggle").css("display", "none");
           }
         });
         // pw x 버튼 클릭시, input clear
-        $('#pw_clear').on('click', function () {
-          $('#pw_input').val('').focus();
-          $(this).css('display', 'none');
-          $('#pw_toggle').css('display', 'none');
+        $("#pw_clear").on("click", function () {
+          $("#pw_input").val("").focus();
+          $(this).css("display", "none");
+          $("#pw_toggle").css("display", "none");
         });
         // pw_toggle 버튼 클릭시, attr type 변경
-        $('#pw_toggle').on('click', function() {
-          const pwInput = $('#pw_input');
-          const currentType = pwInput.attr('type');
+        $("#pw_toggle").on("click", function () {
+          const pwInput = $("#pw_input");
+          const currentType = pwInput.attr("type");
 
-          if (currentType === 'password') {
-            pwInput.attr('type', 'text');
-            $(this).text('👁️'); // 눈 감은 아이콘 등으로 바꿀 수도 있어요
+          if (currentType === "password") {
+            pwInput.attr("type", "text");
+            $(this).text("👁️"); // 눈 감은 아이콘 등으로 바꿀 수도 있어요
           } else {
-            pwInput.attr('type', 'password');
-            $(this).text('🙈');
+            pwInput.attr("type", "password");
+            $(this).text("🙈");
           }
         });
 
-        $('#id_input, #pw_input').on('input', function () {
-          const idVal = $('#id_input').val();
-          const pwVal = $('#pw_input').val();
+        $("#id_input, #pw_input").on("input", function () {
+          const idVal = $("#id_input").val();
+          const pwVal = $("#pw_input").val();
 
           if (idVal.length > 0 && pwVal.length > 0) {
-            $('.btn_login').css({
-              'background-color': '#4CAF50',
-              'border': '1px solid #4CAF50',
-              'color': '#fff'
+            $(".btn_login").css({
+              "background-color": "#4CAF50",
+              border: "1px solid #4CAF50",
+              color: "#fff",
             });
           } else {
-            $('.btn_login').css({
-              'background-color': '#ccc',
-              'border': '1px solid #ccc',
-              'color': '#888'
+            $(".btn_login").css({
+              "background-color": "#ccc",
+              border: "1px solid #ccc",
+              color: "#888",
             });
           }
         });
 
-        $('.btn_login').on('click', function () {
-          const idVal = $('#id_input').val();
-          const pwVal = $('#pw_input').val();
+        $(".btn_login").on("click", function () {
+          const idVal = $("#id_input").val();
+          const pwVal = $("#pw_input").val();
 
-          if(idVal.length == 0) {
-            $("#id_empty").css('display', 'block');
-            $("#pw_empty").css('display', 'none');
-          } else if(pwVal.length == 0) {
-            $("#id_empty").css('display', 'none');
-            $("#pw_empty").css('display', 'block');
+          if (idVal.length == 0) {
+            $("#id_empty").css("display", "block");
+            $("#pw_empty").css("display", "none");
+          } else if (pwVal.length == 0) {
+            $("#id_empty").css("display", "none");
+            $("#pw_empty").css("display", "block");
           } else {
-            $("#id_empty").css('display', 'none');
-            $("#pw_empty").css('display', 'none');
+            $("#id_empty").css("display", "none");
+            $("#pw_empty").css("display", "none");
           }
         });
       });
@@ -125,7 +125,9 @@
             >
               ✕
             </button>
-            <label class="input_label" for="id_input">아이디 또는 전화번호</label>
+            <label class="input_label" for="id_input"
+              >아이디 또는 전화번호</label
+            >
           </div>
 
           <!-- 비밀번호 입력 -->
@@ -161,14 +163,24 @@
           <!-- 로그인 상태 유지 및 보안 버튼 -->
           <div class="btn_group">
             <div class="keep_check">
-              <input type="checkbox" id="keep" name="nvlong" class="input_keep" value="off">
+              <input
+                type="checkbox"
+                id="keep"
+                name="nvlong"
+                class="input_keep"
+                value="off"
+              />
               <label for="keep" class="keep_text">로그인 상태 유지</label>
             </div>
           </div>
 
           <div>
-            <div id="id_empty" style="display:none;color: red;"><b>아이디 또는 전화번호</b>를 입력해 주세요.</div>
-            <div id="pw_empty" style="display:none;color: red;"><b>비밀번호</b>를 입력해 주세요.</div>
+            <div id="id_empty" style="display: none; color: red">
+              <b>아이디 또는 전화번호</b>를 입력해 주세요.
+            </div>
+            <div id="pw_empty" style="display: none; color: red">
+              <b>비밀번호</b>를 입력해 주세요.
+            </div>
           </div>
 
           <!-- 로그인 버튼 -->
@@ -202,7 +214,7 @@
         <!-- 광고 배너 -->
         <aside id="gladbanner" class="banner_wrap">
           &nbsp;
-          <img src="./img/test2.png" alt="광고 배너" />
+          <img src="../img/test2.png" alt="광고 배너" />
         </aside>
       </section>
     </main>
