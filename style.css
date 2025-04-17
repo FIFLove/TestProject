@@ -1,10 +1,7 @@
 /* 공통 스타일 */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-
 }
 
 header {
@@ -31,8 +28,12 @@ aside {
 
 section {
     width: 70%;
-    background-color: #aeeeee;
+    background-color: #f4f4f4;
     border: 1px solid #ddd;
+}
+
+section h2, section .BoardTopOption{    
+    padding-left: 1%;
 }
 
 footer {
@@ -40,7 +41,25 @@ footer {
     color: white;
     text-align: center;
     position: relative;
-    bottom: 0;
     width: 100%;
 }
 
+.BoardTopOption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 2%;
+}
+
+.sortArea {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.boardTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid #000;
+}
