@@ -1,0 +1,46 @@
+/* 공통 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+nav {
+    background-color: #444;
+    color: white;
+    text-align: center;
+}
+
+main {
+    display: flex;
+}
+
+aside {
+    width: 30%;  
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+}
+
+section {
+    width: 70%;
+    background-color: #aeeeee;
+    border: 1px solid #ddd;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
