@@ -1,0 +1,142 @@
+.content {
+    margin: 0 auto;
+    width: 100%;
+}
+
+form {
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    margin: 0 auto;
+}
+
+.input_wrap {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.input_wrap input {
+    padding: 20px 5px;
+    width: 95%;
+}
+
+#id_wrap .login_input {
+    border-radius: 10px 10px 0px 0px;
+    border: 1px solid gray;
+}
+
+#pw_wrap .login_input {
+    border-radius:  0px 0px 10px 10px;
+    border: 1px solid gray;
+    margin-bottom: 10px;
+    border-top: none;
+}
+
+.login_input {
+    width: 100%;
+    padding: 24px 10px 12px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.input_label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 16px;
+    background-color: white;
+    padding: 0 4px;
+    transition: all 0.2s ease;
+    pointer-events: none;
+}
+
+.login_input:focus {
+    border: 1px solid #4CAF50 !important;
+    outline: none;
+}
+
+/* id_input 포커스 시 하단 border만 보여야 하므로 */
+#id_wrap .login_input:focus {
+    border-bottom: none;
+}
+
+/* pw_input 포커스 시 상단 border만 보여야 하므로 */
+#pw_wrap .login_input:focus {
+    border-top: none;
+}
+
+.login_input:focus ~ .input_label,
+.login_input:not(:placeholder-shown) ~ .input_label {
+    top: 10px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+.btn_group {
+    margin: 10px 0;
+}
+
+.keep_check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    color: #888;
+    cursor: pointer;
+}
+
+/* 기존 체크박스 숨기고 커스텀 */
+.input_keep {
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #aaa;
+    border-radius: 50%; /* 원형 체크박스 */
+    position: relative;
+    cursor: pointer;
+}
+
+/* 체크된 상태일 때 ✔ 아이콘 넣기 */
+.input_keep:after {
+    content: '✔';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -58%);
+    font-size: 13px;
+    color: #aaa;
+}
+
+.keep_text {
+    user-select: none;
+    cursor: pointer;
+}
+
+/* 체크 상태일 때 스타일 변경 */
+.input_keep:checked {
+    background-color: #4CAF50; /* 녹색 배경 */
+    border: none;
+}
+
+.input_keep:checked::after {
+    color: white; /* 체크됐을 때만 흰색 ✔ */
+}
+
+.input_keep:checked + .keep_text {
+    color: #222;
+}
+
+.btn_login {
+    width: 95%;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    border: 1px solid #4CAF50;
+    padding: 10px 0;
+}
