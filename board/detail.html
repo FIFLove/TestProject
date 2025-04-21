@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>게시글 상세</title>
+  <script src="board_js/data.js" defer></script>
+  <script src="board_js/detail.js" defer></script>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    .post { border: 1px solid #ccc; padding: 20px; }
+  </style>
+</head>
+<body>
+  <div class="post">
+    <h2 id="post-title"></h2>
+    <p><strong>작성자:</strong> <span id="post-writer"></span></p>
+    <p><strong>작성일:</strong> <span id="post-date"></span></p>
+    <hr />
+    <p id="post-content"></p>
+  </div>
+</body>
+</html>
