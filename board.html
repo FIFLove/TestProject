@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -44,7 +45,7 @@
                     <h2>카페정보</h2>
                     <div class="cafe-profile">
                         <div class="profile-img-container">
-                            <img src="profile-img.png" alt="카페 이미지">
+                            <img src="/img_board/profile-img.png" alt="카페 이미지">
                         </div>
                         <div class="cafe-details">
                             <div class="cafe-stats">
@@ -124,6 +125,91 @@
                 
                 <!-- 팀원 작업 영역 끝 -->
             </main>
+        
+                <!-- 섹션 -->
+                <section>
+                    <!-- 타이틀 및 글 목록 보기순 변경 버튼들 -->
+                    <div class="BoardHeader">
+                        <h2 style="margin-top: 0;"> 전체 글 보기 </h2>
+                    </div>
+        
+                    <div class="BoardTopOption">
+        
+                        <span class="total">
+                            00000 개의 글
+                        </span>
+        
+                        <div class="sortArea">
+                            <!-- 공지 숨기기 -->
+                            <label class="noticeCheck"><input type="checkbox"> 공지 숨기기 </label>
+        
+                            <!-- 보는 방식 버튼 3개 -->
+                            <img src="img_board/sortBtn.png">
+        
+                            <!-- 게시글 개수 버튼 리스트 (5/10/15) -->
+                            <select name="area">
+                                <option value="five"> 5개씩 </option>
+                                <option value="ten" selected> 10개씩 </option>
+                                <option value="fifteen"> 15개씩 </option>
+                                <option value="twenty"> 20개씩 </option>
+                            </select>
+                        </div>
+        
+                    </div>
+        
+                    <!-- 게시판 글 목록 -->
+                    <div class="board">
+                        <!-- 게시글 테이블 -->
+                        <table class="boardTable">
+                            <thead>
+                                <!-- 일반 게시글 테이블 헤더 -->
+                                <tr>
+                                    <th class="boardCategory"></th>
+                                    <th class="boardTitle">제목</th>
+                                    <th class="boardWriter">작성자</th>
+                                    <th class="boardDate">작성일</th>
+                                    <th class="boardCount">조회수</th>
+                                </tr>
+                            </thead>
+                            <tbody id="board-list">
+                                <!-- 게시글 목록이 여기서 동적으로 추가됩니다. -->
+                            </tbody>
+                        </table>
+                    </div>
+        
+        
+                    <!-- 글쓰기버튼 -->
+                    <img src="img_board/write_btn.jpeg" class="writeBtn">
+        
+                    <!-- 페이지 번호들 -->
+                    <div class="page" id="page-nav">
+                        <!-- 페이지 번호 -->
+                    </div>
+        
+                    <!-- 글목록 검색 -->
+                    <div class="search">
+                        <!-- 기간 필터 -->
+                        <select class="postCommentSelect">
+                            <option value="post">전체기간</option>
+                            <option value="comment">1일</option>
+                            <option value="both">1주</option>
+                            <option value="both">1개월</option>
+                        </select>
+        
+                        <!-- 글/댓글 선택 -->
+                        <select class="postCommentSelect">
+                            <option value="both">글+댓글</option>
+                            <option value="post">글만</option>
+                            <option value="comment">댓글만</option>
+                        </select>
+        
+                        <!-- 검색어 입력 -->
+                        <input type="text" class="searchInput" placeholder="검색어를 입력하세요...">
+        
+                        <!-- 검색 버튼 -->
+                        <button class="searchBtn">검색</button>
+                    </div>
+                </section>
         </div>
 
         <!-- 푸터 영역: 카피라이트, 기타 정보가 들어갈 공간 -->
@@ -135,5 +221,11 @@
             </div>
         </footer>
     </div>
+
+       <!-- 외부 자바스크립트 파일 -->
+       <script src="board_js/data.js"></script> <!-- 데이터 파일 -->
+       <script src="board_js/main.js"></script> <!-- 메인 스크립트 -->
+       <script src="board_js/search.js"></script> <!-- 검색 스크립트 -->
 </body>
+
 </html>

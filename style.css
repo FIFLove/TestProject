@@ -1,3 +1,4 @@
+
 /* 기본 스타일 초기화: 모든 요소의 마진, 패딩, 박스 사이징 재설정 */
 * {
     margin: 0;
@@ -375,3 +376,200 @@ body {
     color: #666; /* 텍스트 색상 */
 } 
 
+
+/* 공통 스타일 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', '맑은 고딕', sans-serif;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+nav {
+    background-color: #444;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    flex: 1 0 auto; /* main 영역이 남은 공간을 차지하게 설정 */
+    overflow: auto; /* 내용이 많을 경우 스크롤이 생기도록 설정 */
+}
+
+aside {
+    width: 25%;  /* 전체 너비의 25% */
+    background-color: #f4f4f4;
+    border-right: 1px solid #ddd;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+section {
+    width: 75%;  /* 전체 너비의 75% */
+    background-color: #f9f9f9;
+    border-left: 1px solid #ccc;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+section h2, section .BoardTopOption {
+    padding-left: 1%;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: relative;
+}
+
+.BoardTopOption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 2%;
+    border-bottom: 1px solid #000;
+}
+
+.sortArea {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.boardTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.boardTable th, .boardTable td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.boardTable th {
+    background-color: #f9f9f9;
+    color: #666;
+    font-weight: normal;
+}
+
+.boardCategory, .boardWriter, .boardDate, .boardCount {
+    width: 10%;
+}
+
+.boardTitle {
+    text-align: left;
+    padding-left: 15px;
+    width: 50%;
+}
+
+.notice a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold; /* 예시: 공지는 진하게 */
+}
+
+.notice {
+    background-color: #ebeaea;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.NoticeBoardCategory {
+    display: inline-block;
+    width: 40px;
+    padding: 4px 20px;
+    border-radius: 12px;
+    background-color: #ffe4e4;  /* 원하는 배경색 */
+    font-weight: bold;
+    font-size: 0.9rem;
+    border: 1px solid #e0c97f;  /* 테두리색 */
+  }  
+
+.boardTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+.boardTitle a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.boardTitle a:hover,
+.notice a:hover {
+    text-decoration: underline;
+}
+
+.writeBtn {
+    width: 100px;
+    height: 45px;
+    display: flex;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 20%;
+    cursor: pointer;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.pageNum {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    gap: 15px;
+    width: 100%;
+}
+
+.search input, .search select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 250px;
+}
+
+.searchBtn {
+    padding: 8px 15px;
+    font-size: 14px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.searchBtn:hover {
+    background-color: #45a049;
+}
