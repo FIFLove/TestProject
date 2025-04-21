@@ -1,0 +1,353 @@
+.content {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0px;
+}
+
+.input_wrap {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.input_wrap input {
+  padding: 20px 5px;
+  width: 100%;
+}
+
+#id_wrap .login_input {
+  border-radius: 10px 10px 0px 0px;
+  border: 1px solid gray;
+}
+
+#pw_wrap .login_input {
+  border-radius: 0px 0px 10px 10px;
+  border: 1px solid gray;
+  margin-bottom: 10px;
+  border-top: none;
+}
+
+.login_input {
+  width: 100%;
+  padding: 24px 10px 12px 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input_label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 16px;
+  background-color: white;
+  padding: 0 4px;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.login_input:focus {
+  border: 1px solid #4caf50 !important;
+  outline: none;
+}
+
+/* id_input 포커스 시 하단 border만 보여야 하므로 */
+#id_wrap .login_input:focus {
+  border-bottom: none;
+}
+
+/* pw_input 포커스 시 상단 border만 보여야 하므로 */
+#pw_wrap .login_input:focus {
+  border-top: none;
+}
+
+.login_input:focus ~ .input_label,
+.login_input:not(:placeholder-shown) ~ .input_label {
+  top: 10px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.btn_clear {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* 아이콘을 중앙에 배치 */
+  padding: 0;
+}
+
+.btn_clear i {
+  font-size: 14px; /* 아이콘 크기 조절 */
+  color: #a5adb8; /* 아이콘 색상 수정 */
+}
+
+/* 비밀번호 보기 버튼 */
+.btn_toggle_pw {
+  position: absolute;
+  right: 45px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.btn_toggle_pw i {
+  font-size: 18px; /* 아이콘 크기 */
+  color: #000000; /* 아이콘 색상 */
+}
+
+.btn_group {
+  margin: 4px 0 16px 0; /* 위 4px, 아래 16px */
+}
+
+.keep_check {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  color: #888;
+  cursor: pointer;
+}
+
+/* 기존 체크박스 숨기고 커스텀 */
+.input_keep {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #aaa;
+  border-radius: 50%; /* 원형 체크박스 */
+  position: relative;
+  cursor: pointer;
+}
+
+/* 체크된 상태일 때 ✔ 아이콘 넣기 */
+.input_keep:after {
+  content: "✔";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -58%);
+  font-size: 13px;
+  color: #aaa;
+}
+
+.keep_text {
+  user-select: none;
+  cursor: pointer;
+}
+
+/* 체크 상태일 때 스타일 변경 */
+.input_keep:checked {
+  background-color: #4caf50; /* 녹색 배경 */
+  border: none;
+}
+
+.input_keep:checked::after {
+  color: white; /* 체크됐을 때만 흰색 ✔ */
+}
+
+.input_keep:checked + .keep_text {
+  color: #222;
+}
+
+.btn_login {
+  width: 100%;
+  background-color: #ccc;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px 0;
+  color: #888;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  unicode-bidi: isolate;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  padding-top: 108px;
+  padding-bottom: 48px;
+  box-sizing: border-box;
+}
+
+.header .header_inner {
+  width: 743px;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.header .logo {
+  display: inline-block;
+  font-size: 40px;
+  font-weight: 900;
+  color: #03c75a; /* 네이버 로고 색상 */
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  height: 40px;
+  line-height: 40px;
+}
+
+/* 로그인 아래 네비게이션바 스타일 */
+.find_wrap {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* 항목 사이 간격 조정 */
+  list-style: none;
+  padding-left: 0;
+  padding-bottom: 48px;
+  padding-top: 20px;
+  margin: 0%;
+}
+
+.find_text,
+.separator {
+  color: #888888; /* 어두운 회색 */
+  font-size: 14px; /* 글씨 크기 작게 */
+  text-decoration: none;
+  font-weight: normal;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.separator {
+  height: 10px;
+  font-weight: 500;
+  border-left: 1px solid #888888; /* 구분선 색상 */
+  opacity: 0.5; /* 구분선 투명도 */
+}
+
+/* 광고 배너 스타일 */
+#gladbanner {
+  width: 100%;
+  height: 147px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#gladbanner > img {
+  width: 460px;
+  height: 147px;
+  object-fit: cover;
+}
+
+/* 푸터 네비게이션 */
+.footer_link {
+  display: flex;
+  justify-content: center; /* 가운데 정렬 */
+  align-items: center; /* 세로 가운데 정렬 */
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 6px;
+  margin-top: 32px;
+}
+.footer_link a {
+  color: #888888;
+  font-size: 12px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer_inner {
+  display: flex;
+  justify-content: center; /* 가로 가운데 정렬 */
+  align-items: end; /* 세로 가운데 정렬 */
+  flex-wrap: wrap; /* 너무 좁아지면 줄바꿈 허용 (선택사항) */
+  gap: 5px;
+}
+
+.footer_inner .logo {
+  font-size: 18px;
+  font-weight: 900;
+  color: #03c75a;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: flex-end; /* 하단 기준 정렬 */
+  line-height: 1;
+  padding-bottom: 2px; /* 또는 transform 사용 가능 */
+  transform: translateY(1px);
+}
+
+.text,
+.corp {
+  font-size: 12px;
+  color: #888888;
+}
+.corp {
+  color: #000;
+}
+
+/* 구분자 */
+.separator_foot {
+  border-left: 1px solid #888888;
+  height: 10px;
+  font-weight: 500;
+  opacity: 0.5; /* 구분선 투명도 */
+}
+
+.login_form {
+  width: 460px;
+  height: auto;
+  border: 1px solid #eaeaea;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 24px;
+  border-radius: 20px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 0px; /* 좌우 여백 추가 */
+}
+
+.input_wrap {
+  position: relative;
+  width: 100%;
+}
+
+.input_label {
+  position: absolute;
+}
+
+.login_form,
+.input_wrap,
+.login_input,
+.btn_login {
+  box-sizing: border-box;
+}
+
+#id_input,
+#pw_input {
+  transition: text-indent 0.3s ease;
+  text-indent: 10px; /* 글자만 오른쪽으로 이동 */
+}
