@@ -1,5 +1,5 @@
 import React from 'react';
-import BoardSection from '../components/boardComponents/BoardSection/BoardSection';
+import BoardSection from '../components/boardComponents/boardSection/BoardSection';
 import BoardHeader from '../components/boardComponents/BoardHeader';
 import BoardFooter from '../components/boardComponents/BoardFooter';
 import BoardSidebar from '../components/boardComponents/BoardSidebar';

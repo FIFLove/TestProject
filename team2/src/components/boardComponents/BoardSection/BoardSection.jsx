@@ -1,14 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import SearchBar from "./SearchBar";
 import BoardTopOption from "./BoardTopOption";
 import BoardList from "./BoardList";
 import "./BoardSection.css";
 
 const BoardSection = () => {
-
-
-  // 예시 데이터 추가
-  const dummyNotices = [
+  // ✅ useMemo로 고정
+  const dummyNotices = useMemo(() => [
     {
       id: 1,
       category: "공지",
@@ -27,9 +25,9 @@ const BoardSection = () => {
       date: "2025-04-21",
       count: 5,
     },
-  ];
+  ], []);
 
-  const dummyPosts = [
+  const dummyPosts = useMemo(() => [
     {
       id: 1,
       category: "일반",
@@ -48,30 +46,30 @@ const BoardSection = () => {
       date: "2025-04-21",
       count: 15,
     },
-  ];
+  ], []);
 
   const [searchKeyword, setSearchKeyword] = useState("");
   const [hideNotices, setHideNotices] = useState(false);
   const [filteredPosts, setFilteredPosts] = useState([...dummyNotices, ...dummyPosts]);
 
-  const handleSearch = () => {
+  const handleSearch = useCallback(() => {
     const keyword = searchKeyword.trim().toLowerCase();
 
-    const notices = dummyNotices.filter(post => {
-      const titleMatch = post.title.toLowerCase().includes(keyword);
-      const contentMatch = post.content.toLowerCase().includes(keyword);
-      return titleMatch || contentMatch;
-    });
+    const filteredNotices = dummyNotices.filter(post =>
+      post.title.toLowerCase().includes(keyword) || post.content.toLowerCase().includes(keyword)
+    );
 
-    const posts = dummyPosts.filter(post => {
-      const titleMatch = post.title.toLowerCase().includes(keyword);
-      const contentMatch = post.content.toLowerCase().includes(keyword);
-      return titleMatch || contentMatch;
-    });
+    const filteredGeneral = dummyPosts.filter(post =>
+      post.title.toLowerCase().includes(keyword) || post.content.toLowerCase().includes(keyword)
+    );
 
-    const result = hideNotices ? posts : [...notices, ...posts];
-    setFilteredPosts(result);
-  };
+    const combined = hideNotices ? filteredGeneral : [...filteredNotices, ...filteredGeneral];
+    setFilteredPosts(combined);
+  }, [searchKeyword, hideNotices, dummyNotices, dummyPosts]);
+
+  useEffect(() => {
+    handleSearch();
+  }, [handleSearch]);
 
   return (
     <section>
