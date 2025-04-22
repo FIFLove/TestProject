@@ -3,12 +3,13 @@ import LoginLogo from "../components/login/LoginLogo";
 import LoginNavigation from "../components/login/LoginNavigation";
 import LoginFooter from "../components/login/LoginFooter";
 import LoginBanner from "../components/login/LoginBanner";
-
+import LoginForm from "../login/LoginForm";
+import "./LoginPage.css";
 const LoginPage = () => {
   return (
     <>
       <LoginLogo />
-      <div>로그인 폼</div>
+      <LoginForm />
       <LoginNavigation />
       <LoginBanner />
       <LoginFooter />
