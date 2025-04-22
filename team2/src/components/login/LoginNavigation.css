@@ -1,0 +1,51 @@
+/* LoginNavigation.css */
+
+/* 네비게이션 스타일 */
+.find_wrap {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* 항목 사이 간격 조정 */
+  list-style: none;
+  padding-left: 0;
+  padding-bottom: 48px;
+  padding-top: 20px;
+  margin: 0;
+}
+
+.find_wrap,
+.separator {
+  color: #888888; /* 어두운 회색 */
+  font-size: 14px; /* 글씨 크기 작게 */
+  text-decoration: none;
+  font-weight: normal;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.separator {
+  height: 10px;
+  font-weight: 500;
+  border-left: 1px solid #888888; /* 구분선 색상 */
+  opacity: 0.5; /* 구분선 투명도 */
+}
+
+.find_text:hover {
+  color: #03c75a; /* 호버 시 색상 변경 */
+}
+
+/* 링크 스타일은 클래스 기반으로 관리 */
+.find_text {
+  color: #888888;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.find_text:hover,
+.find_text:focus,
+.find_text:active {
+  color: #03c75a;
+  text-decoration: none;
+}

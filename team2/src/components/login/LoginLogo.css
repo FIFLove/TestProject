@@ -1,0 +1,25 @@
+/* 헤더 영역 */
+.header {
+  padding-top: 108px;
+  padding-bottom: 48px;
+  box-sizing: border-box;
+}
+
+.header .header_inner {
+  width: 743px;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* 로고 링크 */
+.header .logo {
+  display: inline-block;
+  font-size: 40px;
+  font-weight: 900;
+  color: #03c75a; /* 네이버 로고 색상 */
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  height: 40px;
+  line-height: 40px;
+}
