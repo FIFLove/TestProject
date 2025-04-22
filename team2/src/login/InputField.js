@@ -1,0 +1,26 @@
+import React from 'react';
+import {BsXCircleFill} from "react-icons/bs";
+
+const InputField = ({ label, value, onChange, onClear }) => {
+    return (
+        <div className="input_wrap" id="id_wrap">
+            <input
+                type="text"
+                id="id_input"
+                class="login_input"
+                placeholder={label}
+                value={value}
+                onChange={onChange}
+            />
+            {value && (
+                <BsXCircleFill
+                    onClick={onClear}
+                    class="btn_clear"
+                />
+            )}
+            <label class="input_label" for="id_input">아이디 또는 전화번호</label>
+        </div>
+    );
+};
+
+export default InputField;
