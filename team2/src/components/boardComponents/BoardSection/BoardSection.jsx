@@ -1,0 +1,99 @@
+import React, { useState } from "react";
+import SearchBar from "./SearchBar";
+import BoardTopOption from "./BoardTopOption";
+import BoardList from "./BoardList";
+import "./BoardSection.css";
+
+const BoardSection = () => {
+
+
+  // 예시 데이터 추가
+  const dummyNotices = [
+    {
+      id: 1,
+      category: "공지",
+      title: "공지사항 1",
+      content: "공지사항 내용 1",
+      writer: "관리자",
+      date: "2025-04-22",
+      count: 10,
+    },
+    {
+      id: 2,
+      category: "공지",
+      title: "공지사항 2",
+      content: "공지사항 내용 2",
+      writer: "관리자",
+      date: "2025-04-21",
+      count: 5,
+    },
+  ];
+
+  const dummyPosts = [
+    {
+      id: 1,
+      category: "일반",
+      title: "일반 게시글 1",
+      content: "일반 게시글 내용 1",
+      writer: "홍길동",
+      date: "2025-04-22",
+      count: 20,
+    },
+    {
+      id: 2,
+      category: "일반",
+      title: "일반 게시글 2",
+      content: "일반 게시글 내용 2",
+      writer: "김철수",
+      date: "2025-04-21",
+      count: 15,
+    },
+  ];
+
+  const [searchKeyword, setSearchKeyword] = useState("");
+  const [hideNotices, setHideNotices] = useState(false);
+  const [filteredPosts, setFilteredPosts] = useState([...dummyNotices, ...dummyPosts]);
+
+  const handleSearch = () => {
+    const keyword = searchKeyword.trim().toLowerCase();
+
+    const notices = dummyNotices.filter(post => {
+      const titleMatch = post.title.toLowerCase().includes(keyword);
+      const contentMatch = post.content.toLowerCase().includes(keyword);
+      return titleMatch || contentMatch;
+    });
+
+    const posts = dummyPosts.filter(post => {
+      const titleMatch = post.title.toLowerCase().includes(keyword);
+      const contentMatch = post.content.toLowerCase().includes(keyword);
+      return titleMatch || contentMatch;
+    });
+
+    const result = hideNotices ? posts : [...notices, ...posts];
+    setFilteredPosts(result);
+  };
+
+  return (
+    <section>
+      <div className="BoardHeader">
+        <h2 style={{ marginTop: 0 }}>전체 글 보기</h2>
+      </div>
+
+      <BoardTopOption
+        totalPosts={filteredPosts.length}
+        hideNotices={hideNotices}
+        onHideNoticesChange={setHideNotices}
+      />
+
+      <BoardList posts={filteredPosts} />
+
+      <SearchBar
+        searchKeyword={searchKeyword}
+        onSearchKeywordChange={(e) => setSearchKeyword(e.target.value)}
+        onSearchClick={handleSearch}
+      />
+    </section>
+  );
+};
+
+export default BoardSection;

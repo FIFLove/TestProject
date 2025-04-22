@@ -1,0 +1,53 @@
+main {
+    display: flex;
+    
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  /* 사이드바 스타일 */
+  .board-sidebar {
+    width: 250px;
+
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+    height: fit-content;
+  }
+  
+  .board-sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .board-sidebar nav ul li {
+    margin-bottom: 15px;
+  }
+  
+  .board-sidebar nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .board-sidebar nav ul li a:hover {
+    color: #007bff;
+  }
+  
+  /* 게시판 섹션 (BoardSection 포함 영역) */
+  section {
+    flex: 1;
+
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  

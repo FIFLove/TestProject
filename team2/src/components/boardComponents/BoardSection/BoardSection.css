@@ -1,0 +1,95 @@
+/* 전체 글 보기 제목 */
+.BoardHeader h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* 상단 옵션 영역 */
+  .BoardTopOption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .BoardTopOption .total {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .sortArea {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .noticeCheck {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+  
+  .noticeCheck input {
+    margin-right: 5px;
+  }
+  
+  .board {
+    width: 100%;
+  }
+  
+  .boardTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  
+  .boardTable th,
+  .boardTable td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .boardTitle {
+    text-align: left;
+    padding-left: 10px;
+  }
+  
+  .writeBtn {
+    display: block;
+    margin-left: auto;
+    margin-top: 20px;
+    width: 100px;
+    cursor: pointer;
+  }
+  
+  /* 페이지네이션 */
+  .page {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .pageNum {
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  /* 검색 영역 */
+  .search {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+  }
+  
+  .searchInput {
+    width: 200px;
+    padding: 5px;
+  }
+  
+  .searchBtn {
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
