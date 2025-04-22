@@ -1,0 +1,71 @@
+/* 공통 스타일 */
+.input_wrap {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.login_input {
+  width: 100%;
+  padding: 24px 10px 12px 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.2s ease;
+  text-indent: 10px;
+  box-sizing: border-box;
+}
+
+/* 아이디 입력 필드에만 적용 */
+#id_wrap .login_input {
+  border-radius: 10px 10px 0 0; /* 상단 모서리 둥글게 */
+  border-bottom: none; /* 하단 경계선 없애기 */
+}
+
+#id_wrap .login_input:focus {
+  border-bottom: 2px solid #ccc; /* 포커스 시 하단 경계선 추가 */
+}
+
+.login_input:focus {
+  border: 2px solid #4caf50 !important;
+  outline: none;
+}
+
+/* 라벨 스타일 */
+.input_label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 16px;
+  background-color: white;
+  padding: 0 4px;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.login_input:focus ~ .input_label,
+.login_input:not(:placeholder-shown) ~ .input_label {
+  top: 12px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* 클리어 버튼 */
+.btn_clear {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  font-size: 14px;
+  color: #a5adb8;
+}

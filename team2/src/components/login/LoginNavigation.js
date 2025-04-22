@@ -1,5 +1,5 @@
 import React from "react";
-import "./LoginNavigation.css"; // CSS 파일 import
+import "./css/LoginNavigation.css"; // CSS 파일 import
 import { Link } from "react-router-dom";
 
 const LoginNavigation = () => {

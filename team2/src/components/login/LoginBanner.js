@@ -1,5 +1,5 @@
 import React from "react";
-import "./LoginBanner.css"; // Assuming you have a CSS file for styling
+import "./css/LoginBanner.css"; // CSS 파일 import
 
 const LoginBanner = () => {
   return (

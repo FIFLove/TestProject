@@ -1,5 +1,5 @@
 import React from "react";
-import "./LoginFooter.css";
+import "./css/LoginFooter.css";
 import { Link } from "react-router-dom";
 
 const LoginFooter = () => {
@@ -27,7 +27,7 @@ const LoginFooter = () => {
         </ul>
       </nav>
       <div className="footer_inner">
-        <Link to="/" className="logo" id="footer.logo">
+        <Link to="/board" className="logo" id="footer.logo">
           NAVER
         </Link>
         <span className="text">Copyright</span>
