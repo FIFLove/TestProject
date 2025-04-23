@@ -1,8 +1,8 @@
 import React from 'react';
-import BoardSection from '../components/boardComponents/boardSection/BoardSection';
-import BoardHeader from '../components/boardComponents/BoardHeader';
-import BoardFooter from '../components/boardComponents/BoardFooter';
-import BoardSidebar from '../components/boardComponents/BoardSidebar';
+import BoardSection from '../components/board/section/BoardSection';
+import BoardHeader from '../components/board/BoardHeader';
+import BoardFooter from '../components/board/BoardFooter';
+import BoardSidebar from '../components/board/BoardSidebar';
 
 import "../pages/MainBoard.css"; // 필요 시 스타일 분리
 

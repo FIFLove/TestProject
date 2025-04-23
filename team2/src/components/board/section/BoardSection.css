@@ -93,3 +93,29 @@
     cursor: pointer;
   }
   
+  /* 정렬 버튼 영역 */
+.viewButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.viewButton {
+  padding: 8px 15px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.viewButton:hover {
+  background-color: #f4f4f4;
+}
+
+.viewButton.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
