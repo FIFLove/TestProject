@@ -172,9 +172,7 @@ function Page() {
           </div>
         </aside>
         <main className="section">
-          <section>
-            <BoardSection />
-          </section>
+          <BoardSection />
         </main>
       </div>
       <footer className="footer">

@@ -1,3 +1,7 @@
+href {
+  color: red;
+}
+
 /* 전체 글 보기 제목 */
 .BoardHeader h2 {
     font-size: 24px;
@@ -63,10 +67,12 @@
     cursor: pointer;
   }
 
+  /* 글쓰기 버튼 */
   .write-button {
     display: flex;
     justify-content: flex-end;  /* 오른쪽 정렬 */
     margin-top: 5px;  /* 필요에 따라 여백 추가 */
+    margin-bottom: 15px;  /* 필요에 따라 여백 추가 */
     border-radius: 10px;  /* 부모 요소 모서리 둥글게 */
     overflow: hidden;  /* 자식 요소가 부모 요소의 경계를 넘지 않게 */
   }
@@ -82,6 +88,12 @@
     width: 100px;  /* 이미지 너비 설정 */
     height: auto;  /* 이미지 비율에 맞게 높이 자동 설정 */
     display: block;  /* 이미지 아래에 여백이 생기는 것 방지 */
+  }
+
+  .BoardBottomOption {
+    background-color: #f6f6f6;
+    height: 220px; /* 원하는 높이로 조절 */
+    border-radius: 20px;
   }
   
   
@@ -100,7 +112,8 @@
   border: 1px solid #e0e0e0;
   color: #333;
   padding: 8px 12px;
-  margin: 0 5px;
+  margin: 5px;
+  margin-top: 10px;
   font-size: 14px;
   cursor: pointer;
   border-radius: 4px;

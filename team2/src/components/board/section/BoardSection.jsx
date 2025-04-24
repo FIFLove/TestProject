@@ -109,6 +109,10 @@ const BoardSection = () => {
         </button>
       </div>
 
+      <div className="BoardBottomOption">
+
+
+
       <div className="pagination">
         {Array.from({ length: totalPages }, (_, i) => (
           <button
@@ -126,6 +130,9 @@ const BoardSection = () => {
         onSearchKeywordChange={(e) => setSearchKeyword(e.target.value)}
         onSearchClick={handleSearch}
       />
+
+        </div>
+
     </section>
   );
 };
