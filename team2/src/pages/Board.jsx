@@ -1,8 +1,8 @@
 import React from "react";
-import "./CafePages.css";
+import "./Board.css";
 import BoardSection from "../components/board/section/BoardSection";
 
-function Page() {
+function Board() {
   return (
     <div className="container">
       <header className="header">
@@ -172,6 +172,7 @@ function Page() {
           </div>
         </aside>
         <main className="section">
+          
           <BoardSection />
         </main>
       </div>
@@ -188,4 +189,4 @@ function Page() {
   );
 }
 
-export default Page;
+export default Board;

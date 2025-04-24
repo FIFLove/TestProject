@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react";
+import { useNavigate } from "react-router-dom";  // useNavigate 임포트
 import SearchBar from "./SearchBar";
 import BoardTopOption from "./BoardTopOption";
 import BoardList from "./BoardList";
@@ -40,6 +41,8 @@ const BoardSection = () => {
   const [sortType, setSortType] = useState("latest");
   const [itemsPerPage, setItemsPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
+
+  const navigate = useNavigate();  // navigate 훅 사용
 
   const sortPosts = useCallback((posts) => {
     const sorted = [...posts];
@@ -85,6 +88,16 @@ const BoardSection = () => {
     ? paginatedGeneral
     : [...filteredNotices, ...paginatedGeneral];
 
+  const handleWriteButtonClick = () => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    if (!isLoggedIn) {
+      alert("로그인 후 글을 작성할 수 있습니다.");
+      navigate("/login");  // 로그인되지 않으면 로그인 페이지로 이동
+    } else {
+      navigate("/write");  // 로그인되어 있으면 글쓰기 페이지로 이동
+    }
+  };
+
   return (
     <section>
       <div className="BoardHeader">
@@ -104,35 +117,30 @@ const BoardSection = () => {
       <BoardList posts={postsToDisplay} />
 
       <div className="write-button">
-        <button className="write-button">
+        <button className="write-button" onClick={handleWriteButtonClick}>
           <img src="/img_board/write_btn.jpeg" alt="글쓰기" />
         </button>
       </div>
 
       <div className="BoardBottomOption">
-
-
-
-      <div className="pagination">
-        {Array.from({ length: totalPages }, (_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrentPage(i + 1)}
-            className={currentPage === i + 1 ? "active" : ""}
-          >
-            {i + 1}
-          </button>
-        ))}
-      </div>
-
-      <SearchBar
-        searchKeyword={searchKeyword}
-        onSearchKeywordChange={(e) => setSearchKeyword(e.target.value)}
-        onSearchClick={handleSearch}
-      />
-
+        <div className="pagination">
+          {Array.from({ length: totalPages }, (_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrentPage(i + 1)}
+              className={currentPage === i + 1 ? "active" : ""}
+            >
+              {i + 1}
+            </button>
+          ))}
         </div>
 
+        <SearchBar
+          searchKeyword={searchKeyword}
+          onSearchKeywordChange={(e) => setSearchKeyword(e.target.value)}
+          onSearchClick={handleSearch}
+        />
+      </div>
     </section>
   );
 };

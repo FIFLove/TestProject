@@ -1,0 +1,27 @@
+/* 레이아웃 관련 */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0;
+}
+
+.login_form {
+  width: 460px;
+  height: auto;
+  border: 1px solid #eaeaea;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 24px;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.error_message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-bottom: 20px; /* 로그인 상태 유지 버튼과 로그인 버튼 사이에 공간을 만듭니다. */
+}
