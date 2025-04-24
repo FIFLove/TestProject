@@ -1,11 +1,11 @@
 import React from 'react';
-import MainBoard from './pages/MainBoard'; 
+import CafePages from './pages/CafePages'; 
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <MainBoard />
+      <CafePages />
     </div>
   );
 }
